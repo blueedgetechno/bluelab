@@ -1,0 +1,19 @@
+.linkList{
+  width: 100%;
+  min-height: 100vh;
+  background: #0e0e16;
+}
+
+.linkList div{
+  display: flex;
+  flex-direction: column;
+  font-weight: bolder;
+  line-height: 50px;
+  padding: 100px;
+}
+
+a{
+  font-size: 1.2em;
+  color: #606c79;
+  text-decoration: none;
+}

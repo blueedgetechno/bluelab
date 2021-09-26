@@ -1,0 +1,94 @@
+.gamescreen{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paintContainer{
+  position: relative;
+  width: auto;
+  margin-top: 30px;
+  padding: 0;
+  background: #53546c;
+  border: 5px solid #25262f;
+  display: flex;
+  flex-direction: column;
+}
+
+.rowContainer{
+  display: flex;
+}
+
+.sqb{
+  width: 80px;
+  height: 80px;
+  background: #5c6374;
+  border: 1px solid #131324;
+}
+
+.filledSq{
+  background: #188eff;
+}
+
+.obst{
+  background: #1a1b1d;
+}
+
+.brush{
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: #8bbcff;
+  border: 1px solid #0e6337;
+  border-radius: 5px;
+  transition: 0.05s all;
+}
+
+.banner{
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 240px;
+  height: 80px;
+  background: rgba(32, 34, 45, 0.9);
+  border-radius: 20px;
+  font-size: 1.5em;
+  font-weight: bolder;
+  text-align: center;
+  padding-top: 40px;
+  color: #7481a1;
+  cursor: pointer;
+}
+
+.oth-options {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  /* display: none; */
+}
+
+.playoption {
+  padding: 5px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+  color: #0f5599;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.playoption .svgcontainer {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border-radius: 50%;
+  background: rgba(210, 210, 210, 0.61);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.selected{
+  background: rgba(25, 142, 185, 0.61) !important;
+}

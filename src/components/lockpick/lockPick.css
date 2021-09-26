@@ -1,0 +1,149 @@
+.container{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aright{
+  align-items: flex-end !important;
+}
+
+.lockCont{
+  position: relative;
+  width: 520px;
+  height: 280px;
+  padding-top: 12px;
+  background: #e4d29c;
+  border: 280px solid #e3c774;
+  border-width: 0 0 280px 0;
+  margin: 80px 240px 0 0;
+}
+
+.toolsCont{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.picksCont{
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+}
+
+.pick{
+  position: relative;
+  width: 72px;
+  background: rgba(6, 6, 6, 0.12);
+}
+
+.empCont{
+  width: 100%;
+  height: 68px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-width: 0 0 2px 0;
+}
+
+.spbtn{
+  width: 100%;
+  height: 8px;
+  background: #ed3a3a;
+  border-radius: 0 0 4px 4px;
+  cursor: pointer;
+}
+
+.bluepin{
+  box-sizing: border-box;
+  position: absolute;
+  /* top: 75%; */
+  width: 100%;
+  height: 70px;
+  border: 2px solid #2a5dc7;
+  border-radius: 8px;
+  transition: 400ms all ease-in-out;
+}
+
+.springCont{
+  position: relative;
+  width: 100%;
+  height: 0px;
+  /* transform: scale(1,-0.1); */
+  transform-origin: top;
+  transition: 400ms all ease-in-out;
+}
+
+.circ{
+  position: relative;
+  width: 100%;
+  height: 6px;
+}
+
+.circ::after{
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 12px;
+  border: 1px solid #222;
+  border-radius: 50%;
+}
+
+.pickerCont{
+  position: relative;
+  display: flex;
+  margin-left: -100px;
+  margin-top: 500px;
+  transform-origin: bottom left;
+  transition: 200ms all ease-in-out;
+}
+
+.tilt{
+  transform: rotateZ(-8deg);
+}
+
+.picker{
+  position: relative;
+  width: 600px;
+  height: 60px;
+  background: #653c26;
+  border: 4px solid #9a5936;
+  border-radius: 12px 32px 32px 12px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.peck{
+  position: relative;
+  left: -2%;
+  width: 200px;
+  height: 30px;
+  /* background: #c4c4c4; */
+  border: 0 solid #c4c4c4;
+  border-width: 0 2px 12px 0;
+  border-radius: 0 0 40px 0;
+  transform: scale(2.8,1);
+  filter: drop-shadow(1px 1px 2px rgba(14, 14, 22, 0.48));
+  pointer-events: none;
+}
+
+.wrench{
+  position: relative;
+  width: 240px;
+  height: 600px;
+  left: 48%;
+  margin-top: 12px;
+  border: 12px solid #b5b7bd;
+  border-width: 22px 0 0 12px;
+  filter: drop-shadow(1px 1px 2px rgba(14, 14, 22, 0.48));
+  transition: 200ms all ease-in-out;
+  transform-origin: top right;
+}
+
+.perTilt{
+  transform: rotateZ(2deg);
+}

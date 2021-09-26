@@ -1,0 +1,56 @@
+.infscreen{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* display: none; */
+}
+
+.infContainer{
+  position: relative;
+  width: auto;
+  margin-top: 30px;
+  padding: 0;
+  background: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.infrowContainer{
+  display: flex;
+}
+
+.infcont{
+  width: 80px;
+  height: 80px;
+  background: inherit;
+  /* border: 0.1px solid #131324; */
+  cursor: pointer;
+}
+
+.infcell{
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  transform-origin: center;
+}
+
+.rot90{
+  transform: rotateZ(90deg);
+}
+
+.rot180{
+  transform: rotateZ(180deg);
+}
+
+.rot270{
+  transform: rotateZ(270deg);
+}
+
+.oth-options{
+  height: 600px;
+}
+
+.playoption span{
+  color: #99a6b9;
+}
