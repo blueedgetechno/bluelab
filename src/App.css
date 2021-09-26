@@ -4,11 +4,11 @@
   background: #0e0e16;
 }
 
-.linkList div{
+.expcont{
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
   font-weight: bolder;
-  line-height: 50px;
   padding: 100px;
 }
 
@@ -16,4 +16,39 @@ a{
   font-size: 1.2em;
   color: #606c79;
   text-decoration: none;
+}
+
+.card{
+  width: 360px;
+  margin-bottom: 48px;
+  padding-bottom: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 4px 4px 12px #0a0a11;
+  transition: all 200ms ease-in-out;
+}
+
+.card:hover{
+  box-shadow: 8px 8px 24px #0a0a11;
+}
+
+.card a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 300px;
+}
+
+.card img{
+  max-width: 100%;
+  filter: brightness(1.25);
+  margin-bottom: 12px;
+}
+
+.labtitle{
+  text-align: center;
+  font-size: 3em;
+  font-weight: 600;
+  color: #a5a6d1;
+  padding-top: 64px;
 }

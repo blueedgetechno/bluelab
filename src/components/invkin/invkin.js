@@ -6,26 +6,14 @@ import './invkin.css';
 
 const InvKin = ()=>{
   const [arr, setArr] = useState([])
-  const [final, setFinal] = useState([0,0])
+  const [final, setFinal] = useState(math.complex(0,0))
   const [allset, setAll] = useState(true)
+  const [drag, setDrag] = useState(true)
+  const [n, setN] = useState(4)
+  const [ln, setLn] = useState(10)
   const w = window.innerWidth
   const h = window.innerHeight
-  const r = 30, ln = 10, n = 4
-
-  if(!arr.length){
-    var tmp = []
-    for (var i = 0; i < n; i++) {
-      tmp.push(math.complex((50 + i*ln)*w/100, h/2))
-    }
-
-    setArr(tmp)
-    setFinal(math.complex(w/5, h/4))
-    setAll(false)
-  }
-
-  const setup = (p5, canvasParentRef) => {
-		p5.createCanvas(w,h-5).parent(canvasParentRef)
-	}
+  const r = 30
 
   const adjust = ()=>{
     var tmp = [...arr]
@@ -56,12 +44,23 @@ const InvKin = ()=>{
   }
 
   const mouseDragged = (p5)=>{
-    setFinal(math.complex(p5.mouseX, p5.mouseY))
-    setAll(false)
+    if(drag){
+      setFinal(math.complex(p5.mouseX, p5.mouseY))
+      setAll(false)
+    }
   }
 
+  const stop = ()=>setDrag(false)
+  const start = ()=>setDrag(true)
+
+  const setup = (p5, canvasParentRef) => {
+		p5.createCanvas(w,h-5).parent(canvasParentRef)
+	}
+
 	const draw = (p5) => {
+    if(!allset && !drag) return
 		p5.background('#0e0e16')
+
 		for (var i = 0; i < n; i++) {
       p5.fill('#53546c')
       p5.stroke('#53546c')
@@ -87,13 +86,49 @@ const InvKin = ()=>{
 
   useEffect(()=>{
     if(!allset){
-      // console.log("Ok")
       adjust()
     }
   }, [allset])
 
+  useEffect(()=>{
+    var tmp = []
+    for (var i = 0; i < n; i++) {
+      tmp.push(math.complex((50 + i*ln)*w/100, h/2))
+    }
+
+    setArr(tmp)
+    if(math.abs(final)==0){
+      console.log("Ok");
+      setFinal(math.complex(w/5, h/4))
+    }
+
+    setAll(false)
+  }, [n, ln])
+
 	return (
     <div className="boxapp">
+      <div className="descrp">
+        An Implementation of
+        <a href="http://andreasaristidou.com/FABRIK" target="_blank"> FABRIK</a>
+        {" "}algorithm for the simulation of Inverse Kinemetics.
+        Drag the green dot to interact
+        <br/>
+        Inpiration: <a href="https://youtu.be/PGk0rnyTa1U?t=177" target="_blank">
+          Sebastian Lague
+        </a>
+      </div>
+      <div className="controls" onMouseOver={stop} onMouseOut={start}>
+        <div>
+          <label htmlFor="number">N: {n}{" "}</label>
+          <input name="number" type="range" value={n}
+            onChange={(e)=>{ setN(e.target.value)}} min="2" max="16"/>
+        </div>
+        <div>
+          <label htmlFor="number">Length: {ln}{" "}</label>
+          <input name="number" type="range" value={ln}
+            onChange={(e)=>{ setLn(e.target.value)}} min="5" max="25"/>
+        </div>
+      </div>
       <Sketch
         setup={setup}
         draw={draw}

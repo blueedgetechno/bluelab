@@ -16,6 +16,16 @@ body {
   background: inherit;
 }
 
+.home{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 24px;
+  font-weight: 600;
+  color: #caccdb;
+  cursor: pointer;
+}
+
 .boxapp{
   width: 100%;
   min-height: 100vh;
@@ -32,4 +42,20 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+input[type="range"]{
+  outline: none;
+  background: none;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  background-color: #0e0e16;
+}
+
+body::-webkit-scrollbar-thumb {
+  width: 8px;
+  border-radius: 4px;
+  background-color: #484858;
 }

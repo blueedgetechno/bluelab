@@ -3,29 +3,31 @@
   height: 100vh;
 }
 
-.dot{
+.descrp{
+  display: block;
   position: absolute;
-  z-index: 2;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 40px;
-  height: 40px;
-  background: #53546c;
-  border-radius: 50%;
-  margin: -20px 0 0 -20px;
+  padding: 0 0 24px 48px;
+  color: #bcc4cd;
 }
 
-.stick{
+.descrp a{
+  color: #eaebf0;
+  font-size: 1em;
+}
+
+.controls{
+  display: block;
   position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 90px;
-  height: 10px;
-  background: #53546c;
+  bottom: 0;
+  right: 0;
+  padding: 48px;
+  color: #fefefe;
+  z-index: 2;
 }
 
 .redbd{
   box-sizing: border-box;
-  border: solid 4px red;
+  border: solid 2px red;
 }
