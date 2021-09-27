@@ -15,10 +15,14 @@ const BezCrv = ()=>{
   const h = window.innerHeight
   const r = 10, offY = 0.72, spd = 250
 
-  const preload = (p5)=>{
+  const preload = (tmp)=>{
     var tmp2 = []
     for (var i = 0; i < spd; i++) {
-      var z = compute(p5, i/spd)
+      var z
+      if(tmp!=null){
+        z = compute(null, i/spd, 0, tmp)
+      }else z = compute(null, i/spd)
+
       tmp2.push(z)
     }
 
@@ -60,16 +64,17 @@ const BezCrv = ()=>{
   }
 
   const mouseReleased = (p5) => {
-    preload(p5)
+    preload()
     setIdx(-1)
   }
 
   const setup = (p5, canvasParentRef) => {
 		p5.createCanvas(w,h).parent(canvasParentRef)
-    preload(p5)
 	}
 
   const compute = (p5,t=0.5,fr=0,tmp=[...arr])=>{
+    if(tmp.length==0) return math.complex(0,0)
+
     var lv = tmp.length,
         tmp2 = []
     for (var i = 0; i < lv-1; i++) {
@@ -137,7 +142,7 @@ const BezCrv = ()=>{
         p5.stroke(lerp(t/spd))
         p5.strokeWeight(4)
         p5.line(pz.re,pz.im,z.re,z.im)
-        pz = z
+        pz = math.clone(z)
       }
     }
 
@@ -171,6 +176,7 @@ const BezCrv = ()=>{
     }
 
     setArr(tmp)
+    preload(tmp)
   }, [n])
 
 	return (
@@ -182,7 +188,7 @@ const BezCrv = ()=>{
         {" "}Bézier Curve
         </a>{" "}using recursive approach. Drag the blue dots to change the
         shape of curve.<br/>
-        Inpiration: <a href="https://youtu.be/aVwxzDHniEw?t=116" target="_blank">
+        Inspiration: <a href="https://youtu.be/aVwxzDHniEw?t=116" target="_blank">
           Freya Holmér
         </a>
       </div>
