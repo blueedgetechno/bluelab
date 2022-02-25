@@ -98,7 +98,6 @@ const InvKin = ()=>{
 
     setArr(tmp)
     if(math.abs(final)==0){
-      console.log("Ok");
       setFinal(math.complex(w/5, h/4))
     }
 

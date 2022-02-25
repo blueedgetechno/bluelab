@@ -11,6 +11,10 @@ function App() {
       url: "bezCrv",
       img: "bezcrv",
       name: "Bézier Curve"
+    },{
+      url: "ropeSim",
+      img: "ropesim",
+      name: "Rope Simulation"
     }
   ]
   return (
@@ -35,7 +39,7 @@ function App() {
       <div className="labtitle">BlueLab</div>
       <div className="expcont">
         {arr.map(x=>(
-          <div className="card">
+          <div className="card" key={x.name}>
             <a href={`/${x.url}`}>
               <img src={`/img/${x.img}.png`} alt=""/>
               <span>{x.name}</span>

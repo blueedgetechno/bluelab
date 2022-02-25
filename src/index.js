@@ -8,6 +8,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import InvKin from './components/invkin/invkin';
 import BezCrv from './components/bezcrv/bezcrv';
+import RopeSim from './components/ropesim/ropesim';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,6 +21,7 @@ ReactDOM.render(
           <Route exact path='/' component = {App}/>
           <Route exact path='/invKin' component = {InvKin}/>
           <Route exact path='/bezCrv' component = {BezCrv}/>
+          <Route exact path='/ropeSim' component = {RopeSim}/>
         </Switch>
       </div>
     </BrowserRouter>

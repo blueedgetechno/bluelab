@@ -5,9 +5,11 @@
 }
 
 .expcont{
-  display: flex;
+  display: grid;
   justify-content: space-around;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, 360px);
+  grid-row-gap: 6em;
+
   font-weight: bolder;
   padding: 100px;
 }
@@ -20,7 +22,7 @@ a{
 
 .card{
   width: 360px;
-  margin-bottom: 48px;
+  /* margin-bottom: 6em; */
   padding-bottom: 16px;
   border-radius: 16px;
   overflow: hidden;
