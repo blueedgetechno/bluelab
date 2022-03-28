@@ -2,8 +2,7 @@ import React from 'react'
 import './App.css'
 
 function App() {
-  const arr = [
-    {
+  const arr = [{
       url: "invKin",
       img: "invkin",
       name: "Inverse Kinematics"
@@ -15,8 +14,13 @@ function App() {
       url: "ropeSim",
       img: "ropesim",
       name: "Rope Simulation"
+    },{
+      url: "clothSim",
+      img: "clothsim",
+      name: "Cloth Simulation"
     }
   ]
+
   return (
     <div className="linkList">
       <a tabIndex={0} href="https://github.com/blueedgetechno/bluelab" rel="noopener noreferrer"
